@@ -86,7 +86,7 @@ function searchGame(name){
       })
       
     } catch (error) {
-      // alert(error.response.data)
+       alert(error.response.data)
       // dispatch(getGames())
     }
   }
