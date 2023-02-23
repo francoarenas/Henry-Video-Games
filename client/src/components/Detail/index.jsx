@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getDetail } from '../../actions'
 import { Link } from "react-router-dom"
+import style from "./detail.module.css"
 
 export default function Detail(props){
 
@@ -25,21 +26,23 @@ export default function Detail(props){
     },[])
 
     return(
-        <div>
+        <div className={style.main}>
             {
             Object.entries(detail).length ?
-            <div>
-            <h1> { name ? name : detail[0].name } </h1>
+            <div className={style.card}>
             <img src={background_image ? background_image : detail[0].image} alt={'imagen de ' + name ? name : detail[0].name} />
-            <h3> Release Date: { released ? released : detail[0].releaseDate } </h3>
-            <h3> Rating: { rating ? rating : detail[0].name } </h3>
-            <h3> Description: { description ? description.replace(/(<([^>]+)>)/gi, "") : detail[0].description.replace(/(<([^>]+)>)/gi, "") } </h3>
-            <h3> Genres: { genresMap ? genresMap : detail[0].genders.map(e => e.name + ' ') } </h3>
-            <h3> Platforms: { platformsMap ? platformsMap : detail[0].platforms } </h3>
+            <div className={style.conteiner}>
+            <h1> { name ? name : detail[0].name } </h1>
+            <h3> Release Date: <br /> { released ? released : detail[0].releaseDate } </h3>
+            <h3> Rating: <br /> { rating ? rating : detail[0].name } </h3>
+            <h3> Description: <br /> { description ? description.replace(/(<([^>]+)>)/gi, "") : detail[0].description.replace(/(<([^>]+)>)/gi, "") } </h3>
+            <h3> Genres: <br /> { genresMap ? genresMap : detail[0].genders.map(e => e.name + ' ') } </h3>
+            <h3> Platforms: <br /> { platformsMap ? platformsMap : detail[0].platforms } </h3>
+            </div>
             <Link to={'/home'}> <button>VOLVER</button> </Link>
             </div>
             :
-            <h1>Loading...</h1>
+            <div className={style.loading}><img src="https://opengameart.org/sites/default/files/LoadingBarPractice.gif" alt="" /></div>
             }
         </div>
     )

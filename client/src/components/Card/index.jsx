@@ -11,8 +11,8 @@ export default function Card({name,image,genres,rating,id}){
         <img src={image ? image : imagen} alt="Game" width={'500px'} height={'400px'} />
         </Link>
         <h1>{name}</h1>
-        <h3>Rating: {rating}</h3>
-        <h3>Genres: {genres}</h3>
+        <p>Rating <br /> {rating}</p>
+        <p>{genres}</p>
         <Link to={'/videogame/' + id}><button>Mas Informacion</button></Link>
         </div>
 
