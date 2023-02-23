@@ -37,7 +37,7 @@ console.log(allGames)
         <div className={style.head}>
             <Link to={'/create'}><button>GAME CREATE</button></Link>
 
-            <SearchBar game={gamePerPage.length}/>
+            <SearchBar/>
         </div>
             <Paginated 
             gamesPage={gamesPage} 

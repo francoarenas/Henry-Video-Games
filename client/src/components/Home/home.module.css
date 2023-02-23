@@ -10,7 +10,28 @@ body {
 
 .head {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 55px;
+    margin-bottom: 40px;
+}
+
+.head button{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .filtros {
