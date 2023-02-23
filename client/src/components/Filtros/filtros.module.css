@@ -1,0 +1,87 @@
+.conteiner{
+    margin-top: 25px;
+}
+
+.titulos{
+    font-size: 36px;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0px 4px 6px rgba(255, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.btnColumn{
+    display: grid;
+    gap: 5px;
+}
+
+.btnColumn button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+.btnColumn button:before {
+    color: black;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-in-out;
+
+  }
+
+  .btnColumn button:hover:before {
+      color: black;
+    transform: scaleX(1);
+    transform-origin: 100% 50%;
+
+  }
+
+  .btnColumn button:hover {
+      color: black;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0,0,0,0.2);
+
+  }
+
+/* .pageBtn {
+    cursor: pointer;
+    background-color: rgb(231, 218, 218);
+    border-color: rgb(231, 218, 218);
+    box-shadow: 3px 5px 1px rgb(43, 41, 41);
+    color:  black;
+    font-style: italic;
+    font-weight: 700;    
+    text-shadow: 6px 4px 5px rgba(0,0,0,0.43);
+    border-radius: 7px;
+    height: 30px;    
+    font-size: 15px;	
+    line-height: 25px;
+    font-weight: 600;
+} 
+
+.pageBtn :hover {
+    background-color: #ce5249;
+    color: rgb(231, 218, 218);
+} */

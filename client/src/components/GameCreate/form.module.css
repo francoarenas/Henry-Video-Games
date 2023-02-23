@@ -1,0 +1,33 @@
+.conteiner{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: aqua;
+}
+
+.checkbox{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 650px;
+    border: 1px solid red;
+}
+
+.root{
+    background-color: cornflowerblue;
+    padding-bottom: 41rem;
+}
+
+.button{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: aqua;
+}
+
+.errors{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: red;
+}
