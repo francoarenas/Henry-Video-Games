@@ -82,12 +82,12 @@ function rootReducer(state=initialState,action){
                     videoGames: state.allGames
                 }
             }
-
-            const filterGenres = state.allGames.filter(e => e.genres ? e.genres.includes(action.payload + ' ') : e.genders.filter(e => e.name === action.payload))
-
+            const filterDB = state.allGames.filter(e => e.genders?.some(e => e.name === action.payload))
+            const filterGenres = state.allGames.filter(e => e.genres?.includes(action.payload + ' ') )
+console.log(filterDB)
             return{
                 ...state,
-                videoGames: filterGenres
+                videoGames: filterDB.concat(filterGenres)
             }
 
         case GAME_SEARCH:

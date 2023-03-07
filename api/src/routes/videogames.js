@@ -9,8 +9,10 @@ router.get('/', async (req, res) => {
     try {
 
         const {name} = req.query
+        const videogames = await allVideoGames()
 
         if(name){
+           const videogameByName = await videogames.filter(e => e.name.toLowerCase().includes(name.toString().toLowerCase()));
            const searchGames = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}&page_size=15`)
            const searchGamesApi = searchGames.data.results.map(e => {
             return {
@@ -22,14 +24,12 @@ router.get('/', async (req, res) => {
             }
         })
 
-        searchGamesApi.length ?
-        res.status(200).json(searchGamesApi) :
+        searchGamesApi.length || videogameByName.length ?
+        res.status(200).json(videogameByName.concat(searchGamesApi)) :
         res.status(404).send('Game no encontrado')
         }
 
         else{
-
-            const videogames = await allVideoGames()
             
             videogames ?
             res.status(200).json(videogames) :

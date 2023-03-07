@@ -37,8 +37,8 @@ const allVideoGames = async () => {
                 }
             }
         })
-        console.log(gamesDb)
-        const gamesTotal = gamesApi.concat(gamesDb)
+
+        const gamesTotal = gamesDb.concat(gamesApi)
         
       return gamesTotal
       

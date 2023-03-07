@@ -34,7 +34,7 @@ export default function Detail(props){
             <div className={style.conteiner}>
             <h1> { name ? name : detail[0].name } </h1>
             <h3> Release Date: <br /> { released ? released : detail[0].releaseDate } </h3>
-            <h3> Rating: <br /> { rating ? rating : detail[0].name } </h3>
+            <h3> Rating: <br /> { rating ? rating : detail[0].rating } </h3>
             <h3> Description: <br /> { description ? description.replace(/(<([^>]+)>)/gi, "") : detail[0].description.replace(/(<([^>]+)>)/gi, "") } </h3>
             <h3> Genres: <br /> { genresMap ? genresMap : detail[0].genders.map(e => e.name + ' ') } </h3>
             <h3> Platforms: <br /> { platformsMap ? platformsMap : detail[0].platforms } </h3>
