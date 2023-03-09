@@ -4,6 +4,8 @@ import LandingPage from './components/LandingPage'
 import Home from './components/Home'
 import Detail from './components/Detail';
 import GameCreate from './components/GameCreate';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 function App() {
   return (

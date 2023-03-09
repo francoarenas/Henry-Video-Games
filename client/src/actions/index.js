@@ -5,7 +5,7 @@ import { GET_GAMES,GET_DETAILS,GET_GENRES,ORDEN_SORT,FILTER_GENRES,GAME_SEARCH }
 function getGames(){
     return async function(dispatch){
       try {
-        const games = await axios.get('http://localhost:3001/videogames')
+        const games = await axios.get('/videogames')
         return dispatch({
           type: GET_GAMES,
           payload: games.data
@@ -20,7 +20,7 @@ function getGames(){
 function getDetail(id){
   return async function(dispatch){
     try {
-      const detail = await axios.get('http://localhost:3001/videogame/' + id)
+      const detail = await axios.get('/videogame/' + id)
       return dispatch({
         type: GET_DETAILS,
         payload: detail.data
@@ -35,7 +35,7 @@ function getDetail(id){
 function getGenres(){
   return async function(dispatch){
     try {
-      const genres = await axios.get('http://localhost:3001/genres')
+      const genres = await axios.get('/genres')
       return dispatch({
         type: GET_GENRES,
         payload: genres.data
@@ -51,7 +51,7 @@ function gameCreate(game){
   return async function(){
     try {
 
-      let response = await axios.post('http://localhost:3001/videogames/gamecreate', game)
+      let response = await axios.post('/videogames/gamecreate', game)
       return response
 
     } catch (error) {
@@ -78,7 +78,7 @@ function searchGame(name){
   return async function(dispatch){
 
     try {
-      const games = await axios.get(`http://localhost:3001/videogames?name=${name}`)
+      const games = await axios.get(`/videogames?name=${name}`)
       
       return dispatch({
         type: GAME_SEARCH,
