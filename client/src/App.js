@@ -5,7 +5,7 @@ import Home from './components/Home'
 import Detail from './components/Detail';
 import GameCreate from './components/GameCreate';
 import axios from 'axios';
-axios.defaults.baseURL = 'henry-video-games-production.up.railway.app/'
+axios.defaults.baseURL = 'https://henry-video-games-production.up.railway.app/'
 
 function App() {
   return (
