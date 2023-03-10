@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom'
 import {gameCreate, getGames, getGenres} from '../../actions'
 import { validate } from './formJS'
-import imagen from '../../image/gameover.png'
+import imagen from '../../image/game.png'
 import style from './form.module.css'
 
 export default function CreateGame(){
@@ -107,51 +107,51 @@ export default function CreateGame(){
     function handleSubmit(e){
         e.preventDefault()
         dispatch(gameCreate(form))
+        alert('GAME CREATE SUCEFULL!')
     }
-    console.log(form.image.slice(0,-4))
+
     return(
         <div className={style.root}>
-
-           <h1 className={style.conteiner}>Create Games</h1>
+            
+           <h1>Create Games</h1>
            
-           <div className={style.button}><Link to='home'><button>HOME</button></Link></div>
-
            <form action="">
-            <label className={style.conteiner}>NAME
+            <div className={style.conteiner}>
+            <label>NAME <br/>
             <input type="text" name='name' onChange={e => handleInput(e)}/>
             </label>
 
             {errors.name && <p className={style.errors}>{errors.name}</p>}
 
-            <label className={style.conteiner}>DESCRIPTION
+            <label>DESCRIPTION <br/>
             <input type="text" name='description' onChange={e => handleInput(e)}/>
             </label>
 
             {errors.description && <p className={style.errors}>{errors.description}</p>}
 
-            <label className={style.conteiner}>RELEASE DATE
+            <label>RELEASE DATE <br/>
             <input type="date" name='releaseDate' onChange={e => handleInput(e)}/>
             </label>
 
             {errors.releaseDate && <p className={style.errors}>{errors.releaseDate}</p>}
 
-            <label className={style.conteiner}>RATING
-            <input type="number" name='rating' placeholder='1 a 5' onChange={e => handleInput(e)}/>
+            <label>RATING <br/>
+            <input type="number" name='rating' min='0' max='5' placeholder='1 a 5' onChange={e => handleInput(e)}/>
             </label>
 
             {errors.rating && <p className={style.errors}>{errors.rating}</p>}
 
-            <label className={style.conteiner}>IMAGEN LINK
+            <label>IMAGEN LINK <br/>
             <input type="text" name='image' onChange={e => handleInput(e)}/>
             </label>
 
             {errors.image && <p className={style.errors}>{errors.image}</p>}
             
-            <label className={style.conteiner}>GENRES</label>
+            <label>GENRES</label>
 
             {errors.genres && <p className={style.errors}>{errors.genres}</p>}
 
-            <div className={style.conteiner}>
+            <div>
             <div className={style.checkbox}>
             {
                 genres?.map(e => {
@@ -167,11 +167,11 @@ export default function CreateGame(){
             </div>
             </div>
 
-            <label htmlFor="" className={style.conteiner}>PLATFORMS</label>
+            <label htmlFor="">PLATFORMS</label>
 
             {errors.platforms && <p className={style.errors}>{errors.platforms}</p>}
 
-            <div className={style.conteiner}>
+            <div>
             <div className={style.checkbox}>
             {
                 platforms?.map(e => {
@@ -186,9 +186,15 @@ export default function CreateGame(){
             }
             </div>
             </div>
+            </div>
 
-            <div className={style.button}>
-        <button type="submit" disabled={Object.entries(errors).length} onClick={e => handleSubmit(e)}>CREATE GAME</button>
+            <div>
+            <br/>
+        <button className={Object.entries(errors).length && style.disabled} type="submit" disabled={Object.entries(errors).length} onClick={e => handleSubmit(e)}>CREATE GAME</button>
+        <br/>
+        <br/>
+        <div><Link to='home'><button>VOLVER</button></Link></div>
+
             </div>
 
            </form>

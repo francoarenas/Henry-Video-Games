@@ -17,7 +17,7 @@ export default function Home(){
 
         
     const [page, setPage] = useState(1)
-    const [gamesPage, setGamePage] = useState(6)
+    const [gamesPage, setGamePage] = useState(15)
 
     const lastGameIndex = page * gamesPage;
     const firstGameIndex = lastGameIndex - gamesPage;

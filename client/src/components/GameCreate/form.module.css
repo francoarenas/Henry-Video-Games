@@ -1,8 +1,12 @@
+/* color-one: #1F2124;
+color-two: #383A3F;
+color-three: #F68657;
+color-four: #F6B352; */
+
 .conteiner{
     display: grid;
-    justify-content: center;
-    text-align: center;
-    background-color: aqua;
+    justify-items: center; 
+    gap: 10px;
 }
 
 .checkbox{
@@ -14,20 +18,50 @@
 }
 
 .root{
-    background-color: cornflowerblue;
-    padding-bottom: 41rem;
-}
-
-.button{
-    display: grid;
+    background: #1F2124;
+    font-family: "Varela Round", sans-serif;
+        display: grid;
     justify-content: center;
     text-align: center;
-    background-color: aqua;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border-radius: 5px;
+    margin: 7px 20px 20px 100px;
+    width: 75%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    float: left;
+    @media (max-width: 768px) {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+        &:first-child {
+          margin-top: 20px;
+        }
+      }
 }
 
 .errors{
     display: grid;
     justify-content: center;
     text-align: center;
-    background-color: red;
+    color: red;
 }
+
+.root button{
+        background: #F6B352;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0,0,0,0.9);
+        transition: all 200ms ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+}
+
+.root button:hover {
+    background: #F68657;
+  }
+
+  .disabled{
+    opacity: 0.1;
+  }
