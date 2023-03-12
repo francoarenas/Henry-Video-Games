@@ -1,12 +1,21 @@
-body {
-    background-image: url(../../image/9bc27292880429.5e569ff84e4d0.gif);
-    height: 100vh;
-    background-position: center;
+@font-face {
+    font-family: Cyber;
+    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+    font-display: swap;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: 'Cyber', sans-serif;
+    background-image: url('https://raw.githubusercontent.com/SantiRosso/PI-Videogames/main/client/public/carrousell_1920x1080_2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     background-attachment: fixed;
-}
+  }
 
 .conteiner {
     display: flex;
@@ -18,7 +27,6 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
-    margin-left: 55px;
     margin-bottom: 40px;
 }
 

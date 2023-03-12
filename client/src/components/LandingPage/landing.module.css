@@ -1,15 +1,64 @@
 .landing{
-    background-image: url(../../image/9bc27292880429.5e569ff84e4d0.gif);
+    background-image: url('https://raw.githubusercontent.com/SantiRosso/PI-Videogames/main/client/public/carrousell_1920x1080_2.jpg');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     background-attachment: fixed;
-    display: flex;
+    display: grid;
     justify-content: center;
+    align-items: center;
 }
 
-.button{
-    align-self: center;
-}
+  .gameButton {
+    width: 150px;
+    height: 60px;
+    border: none;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .gameButton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .gameButtonInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .gameIcon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4021/4021631.png');
+    background-size: cover;
+    opacity: 0.3;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .gameButton:hover .gameIcon {
+    opacity: 1;
+  }
+  
+  .gameText {
+    position: relative;
+    z-index: 1;
+  }

@@ -2,9 +2,15 @@
     margin-top: 25px;
 }
 
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
 .titulos{
     font-size: 36px;
-    font-family: monospace;
+    font-family: Cyber,sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;

@@ -5,12 +5,14 @@ import {gameCreate, getGames, getGenres} from '../../actions'
 import { validate } from './formJS'
 import imagen from '../../image/game.png'
 import style from './form.module.css'
+import { useHistory } from "react-router-dom";
 
 export default function CreateGame(){
     let key
     const genres = useSelector(state => state.genres)
     const allGames = useSelector(state => state.allGames)
     const dispatch = useDispatch()
+    const history = useHistory()
     
     const [form, setForm] = useState({
         name: '',
@@ -107,7 +109,8 @@ export default function CreateGame(){
     function handleSubmit(e){
         e.preventDefault()
         dispatch(gameCreate(form))
-        alert('GAME CREATE SUCEFULL!')
+        alert('GAME CREATE successful!')
+        history.push("/home")
     }
 
     return(
